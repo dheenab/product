@@ -205,7 +205,7 @@ class ProductcategoriesApplicationTests {
 		mockMvc.perform(MockMvcRequestBuilders.delete(URL+"/categories/delete/Electronics").contentType(MEDIA_TYPE_JSON_UTF8)
 		.accept(MEDIA_TYPE_JSON_UTF8))
 		.andDo(MockMvcResultHandlers.print())
-        .andExpect(MockMvcResultMatchers.status().isNotFound());
+        .andExpect(MockMvcResultMatchers.status().isInternalServerError());
        	}catch (Exception e) {	
 			e.printStackTrace();
 		}

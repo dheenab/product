@@ -75,7 +75,7 @@ public class ProductCatalogueController {
 		ResponseStatus responseStatus = new ResponseStatus();
 		if(isCategoryCreated) {
 		responseStatus.setStatus("Success");
-		responseStatus.setData("Category" +categoryName+ "created successfully");
+		responseStatus.setData("Category" +newCategoryName+ "created successfully");
 		}else {
 		responseStatus.setStatus("Failure");
 		}
@@ -101,7 +101,7 @@ public class ProductCatalogueController {
 	     ProductVo product = productService.createProduct(productVo.getName());
 		ResponseStatus responseStatus = new ResponseStatus();
 		responseStatus.setStatus("Success");
-		responseStatus.setData("Product" +product.getName()+ "deleted successfully");
+		responseStatus.setData("Product" +product.getName()+ "created successfully");
 		return new ResponseEntity<ResponseStatus>(responseStatus,HttpStatus.OK);
 	}
 	
@@ -136,7 +136,7 @@ public class ProductCatalogueController {
 	    productService.updateProduct(productName, newProductName);
 		ResponseStatus responseStatus = new ResponseStatus();
 		responseStatus.setStatus("Success");
-		responseStatus.setData("Product" +productName+ "deleted successfully");
+		responseStatus.setData("Product" +newProductName+ "updated successfully");
 		return new ResponseEntity<ResponseStatus>(responseStatus,HttpStatus.OK);
 	}
 

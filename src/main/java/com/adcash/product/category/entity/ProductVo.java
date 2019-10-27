@@ -2,8 +2,11 @@ package com.adcash.product.category.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class ProductVo {
   private String name;
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private List<String> categories;
   public ProductVo(String name, List<String> categories) {
 	  this.name= name;

@@ -21,19 +21,25 @@ curl -X POST \
 ##Category
 ###All crud operations available for admin user only
 curl -X POST \
-  http://localhost:8080/services/categories \
-  -H 'accept: application/xml' \
-  -H 'authorization: Bearer xxx' \
-  -H 'content-type: application/json'
-
-curl -X POST \
   http://localhost:8080/services/categories/create \
   -H 'accept: application/json' \
   -H 'authorization: Bearer xxx' \
   -H 'content-type: application/json' \
   -d '{
-"name":"Hygiene"
+"name":"Electronics"
 }'
+
+curl -X PUT \
+  http://localhost:8080/services/categories/update/Electronics?newCategoryName=Games\
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer xxx' \
+  -H 'content-type: application/json'
+  
+curl -X DELETE \
+  http://localhost:8080/services/categories/delete/Games\
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer xxx' \
+  -H 'content-type: application/json'
 
 ##Products
 ###All CRUD operation applicable for admin user only
@@ -45,7 +51,7 @@ curl -X POST \
    -H 'authorization: Bearer xxx' \
   
   -d '{
-"name":"toothbrush"
+"name":"toys"
 }'
 curl -X PATCH \
   http://localhost:8080/services/product/add/ \
@@ -53,8 +59,17 @@ curl -X PATCH \
   -H 'content-type: application/json' \
   -H 'authorization: Bearer xxx' \
   -d '{
-"name":"toothbrush",
-"categories":["Hygiene"]
+"name":"machineGuns",
+"categories":["Electronics"]
 }'
+curl -X PUT \
+  http://localhost:8080/services/product/update/machineGuns?newProductName=Scooters \
+  -H 'accept: application/xml' \
+  -H 'content-type: application/json' \
+   -H 'authorization: Bearer xxx'
 
-
+curl -X DELETE \
+  http://localhost:8080/services/product/delete/machineGuns\
+  -H 'accept: application/xml' \
+  -H 'content-type: application/json' \
+   -H 'authorization: Bearer xxx' \
